@@ -27,8 +27,19 @@ class FourLegs extends Animal {
 	}
 }
 
-window.onload = function(){
+class Echo<T>{
+	echoMsg: T;
+	constructor(msg: T){
+		this.echoMsg = msg;
+	}
+	echoText(){
+		return this.echoMsg+'\n';
+	}
+}
+
+function inheritanceExample(){
 	var inheritanceText: string = 'Inheritance:\n';
+	
 	var penguin = new Animal('Penguin', 2);
 	penguin.logInfo();
 	inheritanceText += penguin.getInfo();	
@@ -45,5 +56,26 @@ window.onload = function(){
 	
 	var inheritance = document.createElement('div');
 	inheritance.innerText = inheritanceText;
-	document.body.appendChild(inheritance);	
+	document.body.appendChild(inheritance);
+};
+
+window.onload = function(){
+	inheritanceExample();
+	var br = document.createElement('br');
+	document.body.appendChild(br);
+	genericExample();
+};
+
+function genericExample(){
+	var genericText: string = 'Generic:\n';
+	
+	var str = new Echo<string>('Echo this');
+	genericText += str.echoText();
+	
+	var num = new Echo<number>(42);
+	genericText += num.echoText();
+	
+	var generic = document.createElement('div');
+	generic.innerText = genericText;
+	document.body.appendChild(generic);
 };

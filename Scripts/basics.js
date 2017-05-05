@@ -34,8 +34,19 @@ var FourLegs = (function (_super) {
     return FourLegs;
 })(Animal);
 
-window.onload = function () {
+var Echo = (function () {
+    function Echo(msg) {
+        this.echoMsg = msg;
+    }
+    Echo.prototype.echoText = function () {
+        return this.echoMsg + '\n';
+    };
+    return Echo;
+})();
+
+function inheritanceExample() {
     var inheritanceText = 'Inheritance:\n';
+
     var penguin = new Animal('Penguin', 2);
     penguin.logInfo();
     inheritanceText += penguin.getInfo();
@@ -53,4 +64,27 @@ window.onload = function () {
     var inheritance = document.createElement('div');
     inheritance.innerText = inheritanceText;
     document.body.appendChild(inheritance);
+}
+;
+
+window.onload = function () {
+    inheritanceExample();
+    var br = document.createElement('br');
+    document.body.appendChild(br);
+    genericExample();
 };
+
+function genericExample() {
+    var genericText = 'Generic:\n';
+
+    var str = new Echo('Echo this');
+    genericText += str.echoText();
+
+    var num = new Echo(42);
+    genericText += num.echoText();
+
+    var generic = document.createElement('div');
+    generic.innerText = genericText;
+    document.body.appendChild(generic);
+}
+;
