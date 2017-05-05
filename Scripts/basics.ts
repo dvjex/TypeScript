@@ -1,5 +1,3 @@
-console.log('Hello');
-
 class Animal{
 	legs: number;
 	name: string;
@@ -9,8 +7,12 @@ class Animal{
 		this.legs = legs;
 	}
 	
-	showInfo(){
+	logInfo(){
 		console.log('Name: '+this.name+'\nNumber of legs: '+this.legs);
+	}
+	
+	getInfo(){
+		return 'Name: '+this.name+'\nNumber of legs: '+this.legs+'\n';
 	}
 }
 
@@ -26,13 +28,22 @@ class FourLegs extends Animal {
 }
 
 window.onload = function(){
+	var inheritanceText: string = 'Inheritance:\n';
 	var penguin = new Animal('Penguin', 2);
-	penguin.showInfo();
+	penguin.logInfo();
+	inheritanceText += penguin.getInfo();	
 	var ping = new TwoLegs('Ping the Penguin');
-	ping.showInfo();
+	ping.logInfo();
+	inheritanceText += ping.getInfo();
 	
 	var dog = new Animal('Dog',4);
-	dog.showInfo();
-	var cat = new FourLegs('Billy Cat');
-	cat.showInfo();
+	dog.logInfo();
+	inheritanceText += dog.getInfo();
+	var billy = new FourLegs('Billy Cat');
+	billy.logInfo();
+	inheritanceText += billy.getInfo();
+	
+	var inheritance = document.createElement('div');
+	inheritance.innerText = inheritanceText;
+	document.body.appendChild(inheritance);	
 };
