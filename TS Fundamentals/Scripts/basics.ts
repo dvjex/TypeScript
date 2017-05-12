@@ -37,6 +37,14 @@ class Echo<T>{
 	}
 }
 
+
+window.onload = function(){
+	inheritanceExample();
+	var br = document.createElement('br');
+	document.body.appendChild(br);
+	genericExample();
+};
+
 function inheritanceExample(){
 	var inheritanceText: string = 'Inheritance:\n';
 	
@@ -58,14 +66,6 @@ function inheritanceExample(){
 	inheritance.innerText = inheritanceText;
 	document.body.appendChild(inheritance);
 };
-
-window.onload = function(){
-	inheritanceExample();
-	var br = document.createElement('br');
-	document.body.appendChild(br);
-	genericExample();
-};
-
 function genericExample(){
 	var genericText: string = 'Generic:\n';
 	
