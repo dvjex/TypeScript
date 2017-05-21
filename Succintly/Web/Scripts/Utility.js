@@ -12,7 +12,7 @@
 
             Logger.prototype.getTimeStamp = function () {
                 var now = new Date();
-                return Formatter.pad(now.getHours(), 2, '0') + ':' + Formatter.pad(now.getMinutes(), 2, '0') + ':' + Formatter.pad(now.getSeconds(), 2, '0') + ':' + Formatter.pad(now.getMilliseconds(), 3, '0');
+                return Formatter.pad(now.getHours()) + ':' + Formatter.pad(now.getMinutes()) + ':' + Formatter.pad(now.getSeconds()) + ':' + Formatter.pad(now.getMilliseconds(), 3);
             };
             return Logger;
         })();
@@ -22,6 +22,8 @@
             function Formatter() {
             }
             Formatter.pad = function (num, len, padChar) {
+                if (typeof len === "undefined") { len = 2; }
+                if (typeof padChar === "undefined") { padChar = '0'; }
                 var out = num.toString();
                 while (out.length < len) {
                     out = padChar + out;
