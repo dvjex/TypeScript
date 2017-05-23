@@ -2,7 +2,8 @@
 (function (Succintly) {
     (function (Utility) {
         var Logger = (function () {
-            function Logger() {
+            function Logger(formatter) {
+                this.formatter = formatter;
             }
             Logger.prototype.log = function (message) {
                 if (typeof window.console !== 'undefined') {
@@ -12,7 +13,7 @@
 
             Logger.prototype.getTimeStamp = function () {
                 var now = new Date();
-                return Formatter.pad(now.getHours()) + ':' + Formatter.pad(now.getMinutes()) + ':' + Formatter.pad(now.getSeconds()) + ':' + Formatter.pad(now.getMilliseconds(), 3);
+                return this.formatter.pad(now.getHours()) + ':' + this.formatter.pad(now.getMinutes()) + ':' + this.formatter.pad(now.getSeconds()) + ':' + this.formatter.pad(now.getMilliseconds(), 3);
             };
             return Logger;
         })();
@@ -21,7 +22,7 @@
         var Formatter = (function () {
             function Formatter() {
             }
-            Formatter.pad = function (num, len, padChar) {
+            Formatter.prototype.pad = function (num, len, padChar) {
                 if (typeof len === "undefined") { len = 2; }
                 if (typeof padChar === "undefined") { padChar = '0'; }
                 var out = num.toString();
@@ -32,6 +33,7 @@
             };
             return Formatter;
         })();
+        Utility.Formatter = Formatter;
     })(Succintly.Utility || (Succintly.Utility = {}));
     var Utility = Succintly.Utility;
 })(Succintly || (Succintly = {}));

@@ -2,7 +2,8 @@
 var Succintly;
 (function (Succintly) {
     window.onload = function () {
-        var logger = new Succintly.Utility.Logger();
+        var formatter = new Succintly.Utility.Formatter();
+        var logger = new Succintly.Utility.Logger(formatter);
         logger.log('Logger is loaded');
     };
 })(Succintly || (Succintly = {}));
