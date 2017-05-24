@@ -1,6 +1,9 @@
 ﻿module Succintly {
     export module Utility {
-        export class Logger {
+        export interface ILogger {
+            log(message: string): void;
+        }
+        export class Logger implements ILogger {
             constructor(private formatter: Formatter) {
             }
             log(message: string): void {
