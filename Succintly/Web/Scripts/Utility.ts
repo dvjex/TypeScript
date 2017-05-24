@@ -20,6 +20,12 @@
                     this.formatter.pad(now.getMilliseconds(), 3);
             }
         }
+        export class AnnoyingLogger extends Logger {
+            log(message: string): void {
+                alert(message);
+                super.log(message);
+            }
+        }
 
         export class Formatter {
             pad(num: number, len: number=2, padChar: string='0'): string {

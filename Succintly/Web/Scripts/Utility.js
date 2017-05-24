@@ -1,4 +1,10 @@
-﻿var Succintly;
+﻿var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var Succintly;
 (function (Succintly) {
     (function (Utility) {
         var Logger = (function () {
@@ -18,6 +24,18 @@
             return Logger;
         })();
         Utility.Logger = Logger;
+        var AnnoyingLogger = (function (_super) {
+            __extends(AnnoyingLogger, _super);
+            function AnnoyingLogger() {
+                _super.apply(this, arguments);
+            }
+            AnnoyingLogger.prototype.log = function (message) {
+                alert(message);
+                _super.prototype.log.call(this, message);
+            };
+            return AnnoyingLogger;
+        })(Logger);
+        Utility.AnnoyingLogger = AnnoyingLogger;
 
         var Formatter = (function () {
             function Formatter() {
