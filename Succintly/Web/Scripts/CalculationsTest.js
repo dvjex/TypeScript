@@ -2,10 +2,22 @@
 /// <reference path="tsUnit.ts" />
 var SuccintlyTest;
 (function (SuccintlyTest) {
-    var CalculationsTest = (function () {
-        function CalculationsTest() {
+    var Composer = (function () {
+        function Composer() {
         }
-        CalculationsTest.prototype.addTwoNumbers_3and5_8 = function (context) {
+        Composer.compose = function (test) {
+            //register test classes
+            test.addTestClass(new SimpleMathTest());
+            test.addTestClass(new ComplexMathTest());
+        };
+        return Composer;
+    })();
+    SuccintlyTest.Composer = Composer;
+
+    var SimpleMathTest = (function () {
+        function SimpleMathTest() {
+        }
+        SimpleMathTest.prototype.addTwoNumbers_3and5_8 = function (context) {
             //arrange
             var math = new Succintly.Calculations();
 
@@ -15,12 +27,23 @@ var SuccintlyTest;
             //assert
             context.areIdentical(8, result);
         };
-        return CalculationsTest;
+        return SimpleMathTest;
     })();
-    SuccintlyTest.CalculationsTest = CalculationsTest;
+    SuccintlyTest.SimpleMathTest = SimpleMathTest;
+    var ComplexMathTest = (function () {
+        function ComplexMathTest() {
+        }
+        ComplexMathTest.prototype.addMultipleNumbers_4and6and8and14_32 = function (context) {
+            var math = new Succintly.Calculations();
+            var res = math.addNumbers([4, 6, 8, 14]);
+            context.areIdentical(32, res);
+        };
+        return ComplexMathTest;
+    })();
+    SuccintlyTest.ComplexMathTest = ComplexMathTest;
 
     var test = new tsUnit.Test();
-    test.addTestClass(new CalculationsTest()); // Register test class
+    SuccintlyTest.Composer.compose(test);
     test.showResults(document.getElementById('result'), test.run());
 })(SuccintlyTest || (SuccintlyTest = {}));
 //# sourceMappingURL=CalculationsTest.js.map
