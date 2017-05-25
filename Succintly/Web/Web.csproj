@@ -45,12 +45,17 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\Calculations.ts" />
+    <TypeScriptCompile Include="Scripts\CalculationsTest.ts" />
     <TypeScriptCompile Include="Scripts\Program.ts" />
     <TypeScriptCompile Include="Scripts\sample.ts" />
+    <TypeScriptCompile Include="Scripts\tsUnit.ts" />
     <TypeScriptCompile Include="Scripts\Utility.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\tsUnit.css" />
     <Content Include="Views\Program.html" />
+    <Content Include="Views\tsUnit.htm" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />

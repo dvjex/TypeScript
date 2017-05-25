@@ -1,5 +1,5 @@
 ﻿module Succintly {
-    export class Math {
+    export class Calculations {
         addTwoNumbers(a: number, b: number): number {
             return a + b;
         }

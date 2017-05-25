@@ -1,20 +1,20 @@
 ﻿var Succintly;
 (function (Succintly) {
-    var Math = (function () {
-        function Math() {
+    var Calculations = (function () {
+        function Calculations() {
         }
-        Math.prototype.addTwoNumbers = function (a, b) {
+        Calculations.prototype.addTwoNumbers = function (a, b) {
             return a + b;
         };
 
-        Math.prototype.addNumbers = function (num) {
+        Calculations.prototype.addNumbers = function (num) {
             var sum = 0;
             for (var i = 0; i < num.length; i++)
                 sum = sum + num[i];
             return sum;
         };
-        return Math;
+        return Calculations;
     })();
-    Succintly.Math = Math;
+    Succintly.Calculations = Calculations;
 })(Succintly || (Succintly = {}));
 //# sourceMappingURL=Calculations.js.map
