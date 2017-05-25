@@ -1,14 +1,7 @@
 ﻿/// <reference path="calculations.ts" />
+/// <reference path="testrunner.ts" />
 /// <reference path="tsUnit.ts" />
 module SuccintlyTest {
-    export class Composer { // Test Composer
-        static compose(test: tsUnit.Test) {
-            //register test classes
-            test.addTestClass(new SimpleMathTest());
-            test.addTestClass(new ComplexMathTest());
-        }
-    }
-
     export class SimpleMathTest {
         addTwoNumbers_3and5_8(context: tsUnit.TestContext) {
             //arrange
@@ -29,7 +22,14 @@ module SuccintlyTest {
         }
     }
 
-    var test = new tsUnit.Test();
-    SuccintlyTest.Composer.compose(test);
-    test.showResults(document.getElementById('result'), test.run());
+    var isMsScriptEngineContext: boolean = false;
+
+    var testRunner = new TestRunner();
+    if (!isMsScriptEngineContext) {
+        testRunner.runInBrowser();
+    }
+
+    function getResult() {
+        testRunner.runInScriptEngine();
+    }
 } 

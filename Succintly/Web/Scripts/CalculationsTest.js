@@ -1,19 +1,8 @@
 ﻿/// <reference path="calculations.ts" />
+/// <reference path="testrunner.ts" />
 /// <reference path="tsUnit.ts" />
 var SuccintlyTest;
 (function (SuccintlyTest) {
-    var Composer = (function () {
-        function Composer() {
-        }
-        Composer.compose = function (test) {
-            //register test classes
-            test.addTestClass(new SimpleMathTest());
-            test.addTestClass(new ComplexMathTest());
-        };
-        return Composer;
-    })();
-    SuccintlyTest.Composer = Composer;
-
     var SimpleMathTest = (function () {
         function SimpleMathTest() {
         }
@@ -42,8 +31,15 @@ var SuccintlyTest;
     })();
     SuccintlyTest.ComplexMathTest = ComplexMathTest;
 
-    var test = new tsUnit.Test();
-    SuccintlyTest.Composer.compose(test);
-    test.showResults(document.getElementById('result'), test.run());
+    var isMsScriptEngineContext = false;
+
+    var testRunner = new SuccintlyTest.TestRunner();
+    if (!isMsScriptEngineContext) {
+        testRunner.runInBrowser();
+    }
+
+    function getResult() {
+        testRunner.runInScriptEngine();
+    }
 })(SuccintlyTest || (SuccintlyTest = {}));
 //# sourceMappingURL=CalculationsTest.js.map

@@ -49,6 +49,7 @@
     <TypeScriptCompile Include="Scripts\CalculationsTest.ts" />
     <TypeScriptCompile Include="Scripts\Program.ts" />
     <TypeScriptCompile Include="Scripts\sample.ts" />
+    <TypeScriptCompile Include="Scripts\TestRunner.ts" />
     <TypeScriptCompile Include="Scripts\tsUnit.ts" />
     <TypeScriptCompile Include="Scripts\Utility.ts" />
   </ItemGroup>

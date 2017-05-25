@@ -64,6 +64,35 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Web\Scripts\Calculations.js">
+      <Link>ReferenceScripts\Calculations.js</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Web\Scripts\CalculationsTest.js">
+      <Link>ReferenceScripts\CalculationsTest.js</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Web\Scripts\Program.js">
+      <Link>ReferenceScripts\Program.js</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Web\Scripts\sample.js">
+      <Link>ReferenceScripts\sample.js</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Web\Scripts\TestRunner.js">
+      <Link>ReferenceScripts\TestRunner.js</Link>
+    </Content>
+    <Content Include="..\Web\Scripts\tsUnit.js">
+      <Link>ReferenceScripts\tsUnit.js</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Web\Scripts\Utility.js">
+      <Link>ReferenceScripts\Utility.js</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
