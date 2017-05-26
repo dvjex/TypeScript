@@ -30,16 +30,14 @@ var SuccintlyTest;
         return ComplexMathTest;
     })();
     SuccintlyTest.ComplexMathTest = ComplexMathTest;
-
-    var isMsScriptEngineContext = false;
-
-    var testRunner = new SuccintlyTest.TestRunner();
-    if (!isMsScriptEngineContext) {
-        testRunner.runInBrowser();
-    }
-
-    function getResult() {
-        testRunner.runInScriptEngine();
-    }
 })(SuccintlyTest || (SuccintlyTest = {}));
+
+var testRunner = new SuccintlyTest.TestRunner();
+if (!isMsScriptEngineContext) {
+    testRunner.runInBrowser();
+}
+
+function getResult() {
+    testRunner.runInScriptEngine();
+}
 //# sourceMappingURL=CalculationsTest.js.map

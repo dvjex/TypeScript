@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="JavaScriptTestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeScriptTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="MSScriptControl">
@@ -83,6 +84,7 @@
     </Content>
     <Content Include="..\Web\Scripts\TestRunner.js">
       <Link>ReferenceScripts\TestRunner.js</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Web\Scripts\tsUnit.js">
       <Link>ReferenceScripts\tsUnit.js</Link>

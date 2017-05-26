@@ -1,4 +1,4 @@
-﻿/* tsUnit (c) Copyright 2012-2015 Steve Fenton, licensed under Apache 2.0 https://github.com/Steve-Fenton/tsUnit */
+/* tsUnit (c) Copyright 2012-2015 Steve Fenton, licensed under Apache 2.0 https://github.com/Steve-Fenton/tsUnit */
 // Downgraded to version used by TS Succintly
 var tsUnit;
 (function (tsUnit) {

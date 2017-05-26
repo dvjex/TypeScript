@@ -22,14 +22,16 @@ module SuccintlyTest {
         }
     }
 
-    var isMsScriptEngineContext: boolean = false;
 
-    var testRunner = new TestRunner();
-    if (!isMsScriptEngineContext) {
-        testRunner.runInBrowser();
-    }
+}
 
-    function getResult() {
-        testRunner.runInScriptEngine();
-    }
-} 
+declare var isMsScriptEngineContext: boolean;
+
+var testRunner = new SuccintlyTest.TestRunner();
+if (!isMsScriptEngineContext) {
+    testRunner.runInBrowser();
+}
+
+function getResult() {
+    testRunner.runInScriptEngine();
+}
